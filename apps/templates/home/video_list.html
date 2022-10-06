@@ -1,0 +1,62 @@
+{% extends "layouts/base.html" %} {% block title %} Result Video List {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+
+<!-- [ Main Content ] end -->
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>분석 결과</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        {%if video_list.length != 0 %}
+                                        <div class="list-group">
+                                            {% for list in video_list %}
+                                            <a href="{{ list.get_absolute_url }}"
+                                               class="list-group-item list-group-item-action flex-column align-items-start">
+                                                <div class="d-flex w-100 p-2 justify-content-between">
+                                                    <h5 class="">{{ list.title }}</h5>
+                                                    <small>
+                                                        {% if list.status == 'Complete' %}
+                                                        <span class="badge text-primary rounded-pill"> 완료</span>
+                                                        {% else %}
+                                                        <span class="badge text-danger rounded-pill"> 처리 중 </span>
+                                                        {% endif %}
+                                                    </small>
+                                                </div>
+                                                <small class="p-2">위치: {{ list.pos }}</small>
+                                                <small class="p-2 text-right">분석 요청일: {{ list.upload_dt|date:"Y-m-d" }}</small>
+                                            </a>
+                                            {% endfor %}
+                                        </div>
+                                        {% else %}
+                                        <span class="align-middle">Empty</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <!-- [ Main Content ] end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- [ Main Content ] end -->
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

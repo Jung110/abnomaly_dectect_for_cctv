@@ -1,0 +1,556 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Fa3Fa3 {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <!-- [ breadcrumb ] start -->
+
+                <!-- [ breadcrumb ] end -->
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <!--[ daily sales section ] start-->
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card daily-sales">
+                                    <div class="card-block">
+                                        <h6 class="mb-4">이번주 이상행동 발생 건수</h6>
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-9">
+                                                <h3 class="f-w-300 d-flex align-items-center m-b-0"><i
+                                                        class="feather icon-arrow-up text-c-green f-30 m-r-10"></i> 5건
+                                                    증가</h3>
+                                            </div>
+
+                                            <div class="col-3 text-right">
+                                                <p class="m-b-0">15</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress m-t-30" style="height: 7px;">
+                                            <div class="progress-bar progress-c-theme" role="progressbar"
+                                                 style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--[ daily sales section ] end-->
+                            <!--[ Monthly  sales section ] starts-->
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card Monthly-sales">
+                                    <div class="card-block">
+                                        <h6 class="mb-4">분석 의뢰 건수</h6>
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-9">
+                                                <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i
+                                                        class="feather icon-arrow-down text-c-red f-30 m-r-10"></i> 3건
+                                                    감소</h3>
+                                            </div>
+                                            <div class="col-3 text-right">
+                                                <p class="m-b-0">15건</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress m-t-30" style="height: 7px;">
+                                            <div class="progress-bar progress-c-theme2" role="progressbar"
+                                                 style="width: 35%;" aria-valuenow="35" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--[ Monthly  sales section ] end-->
+                            <!--[ year  sales section ] starts-->
+                            <div class="col-md-12 col-xl-4">
+                                <div class="card yearly-sales">
+                                    <div class="card-block">
+                                        <h6 class="mb-4">현재 구역</h6>
+                                        <hr>
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-9">
+                                                <h3 class="f-w-300 d-flex align-items-center text-center m-b-0"><i
+                                                        class="f-30 m-r-10"></i>강남구 역삼동</h3>
+                                            </div>
+                                        </div>
+                                        <div style="height: 18px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--[ year  sales section ] end-->
+                            <!--[ Recent Users ] start-->
+                            <div class="col-xl-8 col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>기간별 이상 행동 탐지 건수</h5>
+                                    </div>
+                                    <div class="card-block px-0 py-3">
+                                        <div class="col-xl-6">
+                                            <div id="morris-area-curved-chart" style="height:300px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--[ Recent Users ] end-->
+
+                            <!-- [ statistics year chart ] start -->
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card card-event">
+                                    <div class="card-block">
+                                        <div class="row align-items-center justify-content-center">
+                                            <div class="col">
+                                                <h5 class="m-0">이상 행동 감지율</h5>
+                                            </div>
+                                            <div class="col-auto">
+                                                <label class="label theme-bg2 text-white f-14 f-w-400 float-right">94%</label>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <h2 class="ml-2 f-w-300"><sub class="text-muted f-14">감지율이 안정적입니다.</sub>
+                                            </h2>
+                                            <i class="fab fa-angellist text-c-purple f-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-block border-bottom">
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-auto">
+                                                <i class="feather icon-zap f-30 text-c-green"></i>
+                                            </div>
+                                            <div class="col">
+                                                <h3 class="f-w-300">235</h3>
+                                                <span class="d-block text-uppercase">전체 이상행동 발견 건수</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-block">
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-auto">
+                                                <i class="feather icon-map-pin f-30 text-c-blue"></i>
+                                            </div>
+                                            <div class="col">
+                                                <h3 class="f-w-300">42 대</h3>
+                                                <span class="d-block text-uppercase">현재 설치된 CCTV 개수</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ statistics year chart ] end -->
+                            <!-- [ rating list ] starts-->
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card user-list">
+                                    <div class="card-header">
+                                        <h5>서비스 만족도</h5>
+                                    </div>
+                                    <div class="card-block">
+                                        <div class="row align-items-center justify-content-center m-b-20">
+                                            <div class="col-6">
+                                                <h2 class="f-w-300 d-flex align-items-center float-left m-0">4.7 <i
+                                                        class="fas fa-star f-10 m-l-10 text-c-yellow"></i></h2>
+                                            </div>
+                                            <div class="col-6">
+                                                <h6 class="d-flex  align-items-center float-right m-0">0.4 <i
+                                                        class="fas fa-caret-up text-c-green f-22 m-l-10"></i></h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <h6 class="align-items-center float-left"><i
+                                                        class="fas fa-star f-10 m-r-10 text-c-yellow"></i>5</h6>
+                                                <h6 class="align-items-center float-right">384</h6>
+                                                <div class="progress m-t-30 m-b-20" style="height: 6px;">
+                                                    <div class="progress-bar progress-c-theme" role="progressbar"
+                                                         style="width: 70%;" aria-valuenow="70" aria-valuemin="0"
+                                                         aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <h6 class="align-items-center float-left"><i
+                                                        class="fas fa-star f-10 m-r-10 text-c-yellow"></i>4</h6>
+                                                <h6 class="align-items-center float-right">145</h6>
+                                                <div class="progress m-t-30  m-b-20" style="height: 6px;">
+                                                    <div class="progress-bar progress-c-theme" role="progressbar"
+                                                         style="width: 35%;" aria-valuenow="35" aria-valuemin="0"
+                                                         aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <h6 class="align-items-center float-left"><i
+                                                        class="fas fa-star f-10 m-r-10 text-c-yellow"></i>3</h6>
+                                                <h6 class="align-items-center float-right">24</h6>
+                                                <div class="progress m-t-30  m-b-20" style="height: 6px;">
+                                                    <div class="progress-bar progress-c-theme" role="progressbar"
+                                                         style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                                         aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <h6 class="align-items-center float-left"><i
+                                                        class="fas fa-star f-10 m-r-10 text-c-yellow"></i>2</h6>
+                                                <h6 class="align-items-center float-right">1</h6>
+                                                <div class="progress m-t-30  m-b-20" style="height: 6px;">
+                                                    <div class="progress-bar progress-c-theme" role="progressbar"
+                                                         style="width: 10%;" aria-valuenow="10" aria-valuemin="0"
+                                                         aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <h6 class="align-items-center float-left"><i
+                                                        class="fas fa-star f-10 m-r-10 text-c-yellow"></i>1</h6>
+                                                <h6 class="align-items-center float-right">0</h6>
+                                                <div class="progress m-t-30  m-b-20" style="height: 6px;">
+                                                    <div class="progress-bar" role="progressbar" style="width:0;"
+                                                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ rating list ] end-->
+                            <div class="col-xl-8 col-md-12 m-b-30">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                           aria-controls="home" aria-selected="false">오늘</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active show" id="profile-tab" data-toggle="tab"
+                                           href="#profile" role="tab" aria-controls="profile" aria-selected="true">이번
+                                            주</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
+                                           role="tab" aria-controls="contact" aria-selected="false">전체 기간</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">Position</th>
+                                                <th class="text-center">Title</th>
+                                                <th>Upload Date</th>
+                                                <th>Status</th>
+                                                <th class="text-center">Result</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <h6 class="m-0"><img class="rounded-circle m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T01</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T01 영상 분석 의뢰 001</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">분석 중</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-c-grey f-10"></i>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <h6 class="m-0"><img class="rounded-circle  m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T02</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T02 사후 영상 분석 의뢰 001</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">Done</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-c-blue f-10"></i>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0"><img class="rounded-circle  m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T02</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T02 사후 영상 분석 의뢰 002</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">Done</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-c-blue f-10"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0"><img class="rounded-circle  m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T03</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T03 사후 영상 분석 의뢰 001</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">Done</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-danger f-10"></i>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="tab-pane fade active show" id="profile" role="tabpanel"
+                                         aria-labelledby="profile-tab">
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">Position</th>
+                                                <th class="text-center">Title</th>
+                                                <th>Upload Date</th>
+                                                <th>Status</th>
+                                                <th class="text-center">Result</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <h6 class="m-0"><img class="rounded-circle m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T01</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T01 영상 분석 의뢰 001</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">분석 중</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-c-grey f-10"></i>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <h6 class="m-0"><img class="rounded-circle  m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T02</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T02 사후 영상 분석 의뢰 001</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">Done</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-c-blue f-10"></i>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0"><img class="rounded-circle  m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T02</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T02 사후 영상 분석 의뢰 002</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">Done</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-c-blue f-10"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0"><img class="rounded-circle  m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T03</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T03 사후 영상 분석 의뢰 001</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">Done</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-danger f-10"></i>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="contact" role="tabpanel"
+                                         aria-labelledby="contact-tab">
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">Position</th>
+                                                <th class="text-center">Title</th>
+                                                <th>Upload Date</th>
+                                                <th>Status</th>
+                                                <th class="text-center">Result</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <h6 class="m-0"><img class="rounded-circle m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T01</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T01 영상 분석 의뢰 001</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">분석 중</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-c-grey f-10"></i>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <h6 class="m-0"><img class="rounded-circle  m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T02</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T02 사후 영상 분석 의뢰 001</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">Done</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-c-blue f-10"></i>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0"><img class="rounded-circle  m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T02</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T02 사후 영상 분석 의뢰 002</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">Done</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-c-blue f-10"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0"><img class="rounded-circle  m-r-10"
+                                                                         style="width:40px;"
+                                                                         src="{{ ASSETS_ROOT }}/images/alarm/warn.png"
+                                                                         alt="activity-user">T03</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">T03 사후 영상 분석 의뢰 001</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">2022-09-29</h6>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <h6 class="m-0">Done</h6>
+                                                </td>
+                                                <td class="text-center align-middle"><i
+                                                        class="fas fa-circle text-danger f-10"></i>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- [ Main Content ] end -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+<!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script src="{{ ASSETS_ROOT }}/plugins/chart-morris/js/raphael.min.js"></script>
+<script src="{{ ASSETS_ROOT }}/plugins/chart-morris/js/morris.min.js"></script>
+<script src="{{ ASSETS_ROOT }}/js/pages/chart-morris-custom.js"></script>
+{% endblock javascripts %}

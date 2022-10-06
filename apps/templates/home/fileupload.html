@@ -1,0 +1,75 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Upload {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+{% endblock stylesheets %}
+
+{% block content %}
+  <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">사후 분석 서비스</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">사후 분석 동영상 업로드 페이지</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>CCTV영상 사후 분석</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5>제출 양식</h5>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form method='post' action="{% url 'fileupload' %}" enctype="multipart/form-data">
+                                                        {% csrf_token %}
+                                                        <div class="form-group">
+                                                            {{ form.as_p }}
+                                                        </div>
+<!--                                                         <div class="form-group">-->
+<!--                                                            <label>분석할 동영상</label>-->
+<!--                                                            <input type="file" class="form_control" placeholder="분석할 동영상을 업로드해주세요" name="file">-->
+<!--                                                        </div>-->
+<!--                                                         <div class="form-group">-->
+<!--                                                            <label> - </label>-->
+<!--                                                            <input type="text" class="form-control" placeholder="동영상 설명" name='url'>-->
+                                                        <button type="submit" class="btn btn-primary">분석하기</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+{% endblock content %}
