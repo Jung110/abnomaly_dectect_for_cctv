@@ -83,8 +83,7 @@ MIT License를 따릅니다. LICENSE.md에서 자세한 정보를 알 수 있습
 ## Contact
  - Jung110 - aoemsltm119@gmail.com
  - Teo
- - alexturtleneckk
- - 
+ - alexturtleneckk - khy8387@gmail.com
 ## Reference
 <details>
   <summary style = font-size :20pt>Reference</summary>

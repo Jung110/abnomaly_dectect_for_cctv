@@ -36,7 +36,7 @@ class ObjectDetection:
 
     def load_model(self):
         # YOLOv5 모델 로드
-        model = torch.hub.load('ultralytics/yolov5', 'custom', 'yolov5s', classes=2)
+        model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
         return model
 
     def score_frame(self, frame):
