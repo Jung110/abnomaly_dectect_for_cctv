@@ -77,12 +77,18 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## Usage
+## Realeses
+  - fasam_cctv 0.1v
+    - UI구현
+    - 실시간 영상 분석
+    - 로그인 ,로그아웃
+    - 영상 저장 기능
+
 ## License
 MIT License를 따릅니다. LICENSE.md에서 자세한 정보를 알 수 있습니다. 
 ## Contact
  - Jung110 - aoemsltm119@gmail.com
- - Teo
+ - Teo - nonillion1030@gmail.com
  - alexturtleneckk - khy8387@gmail.com
 ## Reference
 <details>
