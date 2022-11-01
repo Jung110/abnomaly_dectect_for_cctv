@@ -88,7 +88,8 @@ python manage.py runserver
 MIT License를 따릅니다. LICENSE.md에서 자세한 정보를 알 수 있습니다. 
 ## Contact
  - Jung110 - aoemsltm119@gmail.com
- - Teo - nonillion1030@gmail.com
+ - tidyp - nonillion1030@gmail.com
+ - Teo - eunseo.oul@gmail.com
  - alexturtleneckk - khy8387@gmail.com
 ## Reference
 <details>
