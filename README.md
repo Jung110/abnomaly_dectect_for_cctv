@@ -68,8 +68,22 @@ activate test
 ```powershell
 pip install -r requirements.txt
 # mysqlclient 미설치시 설치
-pip install mysqlclient  
+pip install mysqlclient
 ```
+- core/setting.py 에서 다음 부분을 수정
+
+```python
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': '사용하는 DB이름',#[1]
+            'USER': '사용하는 Mysql User명',#[2]
+            'PASSWORD': '해당 Mysql User의 password',#[3]
+            'HOST': 'localhost',
+            'PORT': 3306,
+        },
+    다음 [1],[2],[3]을 자신이 생성한 Mysql DB에 따라 바꾸어 적어 줄 것
+```
+
 - mange.py를 이용하여 마이그레이션 및 실행 후 로컬 주소로 이동
 ```powershell
 python manage.py makemigrations

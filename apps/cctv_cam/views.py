@@ -32,7 +32,7 @@ class ObjectDetection:
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     def get_video_from_url(self):
-        return cv2.VideoCapture(0)
+        return cv2.VideoCapture(1)
 
     def load_model(self):
         # YOLOv5 모델 로드
@@ -44,12 +44,12 @@ class ObjectDetection:
         # return: 프레임에서 모델이 감지한 객체의 레이블과 좌표
         self.model.to(self.device)
         frame = [frame]
-        # result cf) # 54th line "results.xyxyn[0]" result
+        # result cf) # 54th line "results.xyxyn[0]" 예시
         #      xmin      ymin     xmax     ymax     confidence     class     name
-        # 0   749.50    43.50    1148.0   704.5      0.874023          0   person
-        # 1   433.50   433.50     517.5   714.5      0.687988         27      tie
-        # 2   114.75   195.75    1095.0   708.0      0.624512          0   person
-        # 3   986.00   304.00    1028.0   420.0      0.286865         27      tie
+        # 0   749.50    43.50    1148.0   704.5      0.874023          0   normal
+        # 1   433.50   433.50     517.5   714.5      0.687988          1   abnormal
+        # 2   114.75   195.75    1095.0   708.0      0.624512          0   normal
+        # 2   114.75   195.75    1095.0   708.0      0.604512          0   abnormal
         results = self.model(frame)
         labels, cord = results.xyxyn[0][:, -1].cpu().numpy(), results.xyxyn[0][:, :-1].cpu().numpy()
         return labels, cord
@@ -74,8 +74,8 @@ class ObjectDetection:
                     row[3] * y_shape)
                 bgr = (0, 255, 0)
                 cv2.rectangle(frame, (x1, y1), (x2, y2), bgr, 2)
-                cv2.putText(frame, f"{i}"
-                            + ': ' + str(x1) + ', ' + str(x2) + ', ' + str(y1) + ', ' + str(y2),
+                cv2.putText(frame, f'{self.class_to_label(i)}' # 라벨명
+                            + ': ' + str(x1) + ', ' + str(x2) + ', ' + str(y1) + ', ' + str(y2), # 꼭지점 좌표
                             (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 0.9, bgr, 2)
         return frame
 
